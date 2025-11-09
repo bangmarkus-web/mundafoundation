@@ -1,0 +1,16 @@
+
+[build]
+  publish = "."
+
+[dev]
+  command = "npx netlify-cms-proxy-server"
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
