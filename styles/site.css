@@ -45,3 +45,9 @@ textarea:focus {
   background: linear-gradient(to bottom right, #fff7ed, #ffffff, #f0f9ff);
 }
 
+/* Artikkelkort: subtil løfteeffekt ved hover */
+a.group:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s ease-in-out;
+}
