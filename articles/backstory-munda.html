@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Backstory: Munda Foundation – Munda Foundation</title>
+  <link href="https://unpkg.com/@fontsource/inter@5.0.16/variable.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/styles/site.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <meta name="description" content="Historien bak Munda Foundation – en organisasjon bygget på raushet og fellesskap.">
+</head>
+
+<body class="bg-gradient-to-b from-sky-50 via-white to-violet-50 text-slate-800 [font-family:'InterVariable',system-ui,-apple-system,Segoe_UI,Roboto,Inter,Arial,sans-serif]">
+
+  <main class="mx-auto max-w-3xl px-4 py-12">
+
+    <!-- Språkvelger -->
+    <div class="text-sm text-right mb-4">
+      <a href="?lang=no" class="underline font-semibold">Norsk</a> |
+      <a href="?lang=en" class="underline">English</a>
+    </div>
+
+    <!-- Norsk versjon -->
+    <article id="no" class="prose prose-slate max-w-none">
+      <a href="/index.html" class="text-sm text-cyan-700 hover:underline">← Til forsiden</a>
+      <h1 class="mt-4 text-3xl font-extrabold">Backstory: Munda Foundation</h1>
+      <p class="mt-2 text-sm text-slate-500">Publisert 1. november 2025</p>
+
+      <p class="mt-6">Munda Foundation ble opprettet til minne om onkel Munda Rogers – en mann som gjennom hele sitt liv viste hva det vil si å handle med raushet, kjærlighet og tro på fellesskapet.</p>
+
+      <p>Gjennom borgerkrigen i Liberia tok han imot familier på flukt, inkludert min egen. Han delte alt han hadde, og åpnet hjemmet sitt for barn og unge i nød. Huset hans var lite, men det var alltid åpent.</p>
+
+      <p>I dag fører Munda Foundation denne ånden videre. Vi støtter barn og unge i Sierra Leone gjennom kunst, musikk og samarbeid på tvers av kulturer – med mål om å bygge håp, verdighet og tilhørighet.</p>
+    </article>
+
+    <!-- Engelsk versjon -->
+    <article id="en" class="prose prose-slate max-w-none hidden">
+      <a href="/index-en.html" class="text-sm text-cyan-700 hover:underline">← Back to homepage</a>
+      <h1 class="mt-4 text-3xl font-extrabold">Backstory: The Munda Foundation</h1>
+      <p class="mt-2 text-sm text-slate-500">Published 22 October 2025</p>
+
+      <p class="mt-6">Munda Foundation was established in honor of Uncle Munda Rogers — a man who throughout his life embodied generosity, compassion, and a deep belief in community.</p>
+
+      <p>During the civil war in Liberia, he welcomed families fleeing the conflict, including my own. He shared everything he had and opened his home to children and youth in need. His house was small, but it was always open.</p>
+
+      <p>Today, the Munda Foundation continues this spirit. We support children and young people in Sierra Leone through art, music, and collaboration across cultures — with the aim of fostering hope, dignity, and belonging.</p>
+    </article>
+
+  </main>
+
+  <script>
+    // Enkel språkvelger som bytter mellom artiklene
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get('lang') || 'no';
+    document.getElementById(lang).classList.remove('hidden');
+  </script>
+
+</body>
+</html>
