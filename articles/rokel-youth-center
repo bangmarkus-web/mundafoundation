@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rokel Ungdomssenter - Freetown, Sierra Leone</title>
+  <link href="https://unpkg.com/@fontsource/inter@5.0.16/variable.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/styles/site.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <meta name="description" content="Stiftelsens mål">
+</head>
+
+<body class="bg-gradient-to-b from-sky-50 via-white to-violet-50 text-slate-800 [font-family:'InterVariable',system-ui,-apple-system,Segoe_UI,Roboto,Inter,Arial,sans-serif]">
+
+  <main class="mx-auto max-w-3xl px-4 py-12">
+
+    <!-- Språkvelger -->
+    <div class="text-sm text-right mb-4">
+      <a href="?lang=no" class="underline font-semibold">Norsk</a> |
+      <a href="?lang=en" class="underline">English</a>
+    </div>
+
+    <!-- Norsk versjon -->
+    <article id="no" class="prose prose-slate max-w-none">
+      <a href="/index.html" class="text-sm text-cyan-700 hover:underline">← Til forsiden</a>
+      <h1 class="mt-4 text-3xl font-extrabold">Rokel Ungdomssenter</h1>
+      <p class="mt-2 text-sm text-slate-500">Publisert 1. november 2025</p>
+
+      <p class="mt-6">Ingress her.</p>
+
+      <p>Avsnitt.</p>
+
+      <p>Avsnitt.</p>
+    </article>
+
+    <!-- Engelsk versjon -->
+    <article id="en" class="prose prose-slate max-w-none hidden">
+      <a href="/index-en.html" class="text-sm text-cyan-700 hover:underline">← Back to homepage</a>
+      <h1 class="mt-4 text-3xl font-extrabold">Rokel Youth Center</h1>
+      <p class="mt-2 text-sm text-slate-500">Published 22 October 2025</p>
+
+      <p class="mt-6">Ingress her.</p>
+
+      <p>Avsnitt.</p>
+
+      <p>Avsnitt.</p>
+    </article>
+
+  </main>
+
+  <script>
+    // Enkel språkvelger som bytter mellom artiklene
+    const params = new URLSearchParams(window.location.search);
+    const lang = params.get('lang') || 'no';
+    document.getElementById(lang).classList.remove('hidden');
+  </script>
+
+</body>
+</html>
