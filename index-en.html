@@ -43,35 +43,37 @@
     </div>
   </header>
 
-  <section class="relative">
-    <div class="mx-auto max-w-6xl px-4 pt-16 pb-20 grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">Art and music that create hope</h1>
-        <p class="mt-4 text-lg text-slate-700 leading-relaxed">
-          Munda Foundation supports children and young people through art, music and community.  
-          We develop local activities together with partners in Sierra Leone and Norway.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#about" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-semibold shadow-sm bg-cyan-600 text-white hover:opacity-95">Read more</a>
-          <a href="#articles" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-semibold shadow-sm border border-slate-300 bg-white text-slate-800 hover:bg-slate-50">Latest articles</a>
-        </div>
+<section class="relative">
+  <div class="mx-auto max-w-6xl px-4 pt-16 pb-20 grid md:grid-cols-2 gap-10 items-center">
+    <!-- Left: text -->
+    <div>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
+        Art and Music for Hope
+      </h1>
+      <p class="mt-4 text-lg text-slate-700 leading-relaxed">
+        Munda Foundation supports children and young people through art, music and community.
+        We develop local activities together with partners in Sierra Leone and Norway.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="#about" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-semibold shadow-sm bg-cyan-600 text-white hover:opacity-95">Les mer</a>
+        <a href="#articles" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-semibold shadow-sm border border-slate-300 bg-white text-slate-800 hover:bg-slate-50">Siste artikler</a>
       </div>
-      
-<!-- HERO: no-crop image inside thin gradient frame -->
-<div class="relative">
-  <div class="rounded-3xl p-[6px] bg-gradient-to-tr from-fuchsia-200 via-amber-100 to-cyan-200">
-    <figure class="rounded-3xl bg-[#dff2f3] overflow-hidden">
-      <!-- Aspect ratio box prevents cropping and stretching -->
-      <div class="aspect-[5/4] md:aspect-[4/3] w-full">
-        <img
-          src="./images/logo.png"
-          alt="Munda Foundation logo"
-          class="w-full h-full object-contain"
-        />
+    </div>
+
+    <!-- Right: image with glow, no cropping -->
+    <div class="relative">
+      <div class="rounded-3xl p-[6px] bg-gradient-to-tr from-fuchsia-200 via-amber-100 to-cyan-200">
+        <figure class="rounded-3xl bg-[#dff2f3] overflow-hidden">
+          <!-- keep full logo visible without crop -->
+          <div class="aspect-[4/3] w-full">
+            <img src="./images/logo.png" alt="Munda Foundation logo" class="w-full h-full object-contain" />
+          </div>
+        </figure>
       </div>
-    </figure>
-  </div>    
-</div>
+    </div>
+  </div>
+</section>
+
         
   <section id="about" class="scroll-mt-24">
     <div class="mx-auto max-w-6xl px-4 py-16">
