@@ -74,53 +74,104 @@
   </div>
 </section> 
         
-  <section id="about" class="scroll-mt-24">
-    <div class="mx-auto max-w-6xl px-4 py-16">
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="md:col-span-2">
-          <h2 class="text-3xl font-bold">Who we are</h2>
-          <p class="mt-4 leading-relaxed text-slate-700">
-            Munda is a common family name in Sierra Leone and means “ours” in Mende.  
-            The name honors our uncle Munda Rogers, who dedicated his life to helping others.  
-            We continue his legacy through practical work and projects that offer safe and creative spaces for children and youth.
+<section id="about" class="scroll-mt-24">
+  <div class="mx-auto max-w-6xl px-4 py-16">
+    <!-- Unified grid: 2 columns for About, 1 for Support box -->
+    <div class="grid md:grid-cols-3 gap-10 md:items-start">
+      
+      <!-- Who we are (2 columns) -->
+      <div class="md:col-span-2">
+        <h2 class="text-3xl font-bold">Who we are</h2>
+        <p class="mt-4 leading-relaxed text-slate-700">
+          Munda is a common family name in Sierra Leone and means “ours” in the Mende language. 
+          The name honors our uncle, Munda Rogers, who devoted his life to helping others. 
+          During the civil war, he opened his home to families fleeing conflict and shared everything 
+          he had with children and young people in need of a place to belong.
+        </p>
+        <p class="mt-4 leading-relaxed text-slate-700">
+          Munda Foundation carries this legacy forward through projects that build community and create opportunities. 
+          We believe in art and music as forces for development — not as charity, but as collaboration, sharing, and creation. 
+          Our initiatives are developed together with local partners in Sierra Leone and Norway, 
+          with the goal of giving more children and youth a space to grow, express themselves, and be seen.
+        </p>
+
+        <!-- Four cards -->
+        <ul class="mt-6 grid sm:grid-cols-2 gap-3">
+          <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-soft">
+            <span class="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+            <div>
+              <div class="font-semibold">Music education and instrument library</div>
+              <div class="mt-1 text-sm text-slate-600">
+                We collect and distribute instruments and offer music training as a way to foster learning, joy, and connection.
+              </div>
+            </div>
+          </li>
+
+          <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-soft">
+            <span class="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+            <div>
+              <div class="font-semibold">Art workshops and creative gatherings</div>
+              <div class="mt-1 text-sm text-slate-600">
+                Local workshops and open spaces where children and young people can express themselves through art and craft.
+              </div>
+            </div>
+          </li>
+
+          <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-soft">
+            <span class="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+            <div>
+              <div class="font-semibold">Collaboration with schools and volunteers</div>
+              <div class="mt-1 text-sm text-slate-600">
+                We collaborate with local teachers, artists, and volunteers to anchor our activities within the community.
+              </div>
+            </div>
+          </li>
+
+          <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-soft">
+            <span class="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500"></span>
+            <div>
+              <div class="font-semibold">Equipment distribution and capacity building</div>
+              <div class="mt-1 text-sm text-slate-600">
+                From instruments and art materials to training and organizational support — 
+                we strengthen local initiatives that build the future.
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Support our work (1 column) -->
+      <aside class="md:col-span-1 place-self-start">
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft text-center">
+          <h3 class="font-semibold">Support our work</h3>
+          <p class="mt-2 text-sm text-slate-600">
+            Get in touch if you’d like to contribute with equipment, time, or funds.
           </p>
-          <ul class="mt-6 grid sm:grid-cols-2 gap-3">
-            <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-soft"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500"></span>Music education and instrument library</li>
-            <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-soft"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500"></span>Art workshops and creative gatherings</li>
-            <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-soft"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500"></span>Local partnerships with schools and volunteers</li>
-            <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-soft"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500"></span>Donations of equipment and capacity building</li>
-          </ul>
+
+          <a href="#contact"
+             class="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-soft hover:opacity-90">
+            Contact us
+          </a>
+
+          <a href="vipps://send?number=123456"
+             class="mt-3 inline-flex items-center justify-center gap-2 rounded-2xl bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:opacity-90">
+            Donate with Vipps
+          </a>
+
+          <!-- QR code (optional) -->
+          <div class="mt-6 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-cyan-50 border border-slate-100 shadow-inner p-4">
+            <p class="text-sm text-slate-600 mb-2">Scan the QR code to donate via Vipps</p>
+            <img src="./images/vipps-qr.png" alt="Vipps QR code" class="mx-auto max-w-40 rounded-xl shadow-soft">
+            <a href="vipps://send?number=123456" class="block mt-3 text-cyan-700 hover:underline text-sm">
+              or click here to open Vipps
+            </a>
+          </div>
         </div>
-<aside class="md:col-span-1 place-self-start">
-  <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft text-center">
-    <h3 class="font-semibold text-lg">Support our work</h3>
-    <p class="mt-2 text-sm text-slate-600">
-      Get in touch if you want to contribute with instruments, time or funding.
-    </p>
+      </aside>
 
-    <a href="#contact" 
-       class="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-soft hover:opacity-90">
-       Contact us
-    </a>
-
-    <a href="vipps://send?number=123456" 
-       class="mt-3 inline-flex items-center justify-center gap-2 rounded-2xl bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:opacity-90">
-       Donate with Vipps
-    </a>
-
-    <div class="mt-6 p-4 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-cyan-50 border border-slate-100 shadow-inner">
-      <p class="text-sm text-slate-600 mb-2">Scan to donate via Vipps</p>
-      <img src="/images/vipps-qr.png" alt="Vipps QR code" class="mx-auto w-40 rounded-xl shadow-soft">
-      <a href="vipps://send?number=123456" 
-         class="block mt-3 text-cyan-700 hover:underline text-sm">
-         or click here to open Vipps
-      </a>
     </div>
   </div>
-</aside>
-      </div>
-    </div>
-  </section>
+</section>
 
   <section id="articles" class="scroll-mt-24">
     <div class="mx-auto max-w-6xl px-4 py-16">
