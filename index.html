@@ -123,53 +123,80 @@
     </div>
   </section>
 
-  <section id="contact" class="scroll-mt-24">
-    <div class="mx-auto max-w-6xl px-4 py-16">
-      <div class="grid md:grid-cols-2 gap-10">
-        <div>
-          <h2 class="text-3xl font-bold">Kontakt</h2>
-          <p class="mt-4 text-slate-700">Send oss en melding, så svarer vi så raskt vi kan.</p>
-          <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
-<form action="https://api.web3forms.com/submit" method="POST" class="grid gap-4">
-  <!-- Web3Forms -->
-  <input type="hidden" name="access_key" value="5cc1cb5d-ff7e-4128-96f4-39558d6340ac">
-  <input type="hidden" name="subject" value="Ny melding fra Munda Foundation">
-  <input type="hidden" name="from_name" value="Munda Foundation nettsted">
-  <input type="hidden" name="redirect" value="https://bangmarkus-web.github.io/mundafoundation/success.html?lang=no">
+<section id="contact" class="scroll-mt-24">
+  <div class="mx-auto max-w-6xl px-4 py-16">
 
-  <!-- Honeypot mot spam -->
-  <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+    <!-- Overskrift + ingress utenfor grid -->
+    <h2 class="text-3xl font-bold">Kontakt</h2>
+    <p class="mt-4 text-slate-700">Send oss en melding her, så svarer vi så raskt vi kan.</p>
 
-  <label class="block text-sm font-medium">Navn</label>
-  <input type="text" name="name" required class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-800">
+    <!-- Kun kortene i grid -->
+    <div class="mt-6 grid md:grid-cols-2 gap-10 md:items-start">
 
-  <label class="block text-sm font-medium">E-post</label>
-  <input type="email" name="email" required class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-800">
+      <!-- Skjema-kort -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+        <form action="https://api.web3forms.com/submit" method="POST" class="grid gap-4">
 
-  <label class="block text-sm font-medium">Melding</label>
-  <textarea name="message" rows="5" required class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-800"></textarea>
+          <!-- Web3 skjulte felter -->
+          <input type="hidden" name="access_key" value="DIN_ACCESS_KEY_HER">
+          <input type="hidden" name="subject" value="Ny melding fra Munda Foundation">
+          <input type="hidden" name="from_name" value="Munda Foundation nettside">
+          <input type="hidden" name="redirect" value="https://mundafoundation.org/success.html?lang=no">
 
-  <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white">
-    Send melding
-  </button>
+          <!-- Honeypot -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none">
 
-  <p class="text-xs text-slate-500">
-    Når du sender inn skjemaet samtykker du til at vi lagrer henvendelsen for å kunne svare.
-  </p>
-</form>
+          <div>
+            <label class="block text-sm font-medium">Navn</label>
+            <input type="text" name="name" required
+                   class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2
+                          text-slate-800 focus:outline-none focus:ring-2 focus:ring-cyan-500">
           </div>
-        </div>
-        <aside class="md:pl-6">
-          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
-            <h3 class="font-semibold">Postadresse</h3>
-            <p class="mt-2 text-sm text-slate-700">Munda Foundation<br>Bergen, Norge</p>
-            <h3 class="mt-6 font-semibold">E-post</h3>
-            <a href="mailto:post@mundafoundation.org" class="mt-2 block text-sm text-cyan-700 hover:underline">post@mundafoundation.org</a>
+
+          <div>
+            <label class="block text-sm font-medium">E-post</label>
+            <input type="email" name="email" required
+                   class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2
+                          text-slate-800 focus:outline-none focus:ring-2 focus:ring-cyan-500">
           </div>
-        </aside>
+
+          <div>
+            <label class="block text-sm font-medium">Melding</label>
+            <textarea name="message" rows="5" required
+                      class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2
+                             text-slate-800 focus:outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+          </div>
+
+          <button type="submit"
+                  class="mt-1 inline-flex items-center justify-center gap-2 rounded-2xl
+                         bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-soft">
+            Send melding
+          </button>
+
+          <p class="text-xs text-slate-500">
+            Når du sender inn skjemaet samtykker du til at vi lagrer henvendelsen for å kunne svare.
+          </p>
+        </form>
       </div>
+
+      <!-- Adresse-kort -->
+      <aside class="place-self-start">
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <h3 class="font-semibold">Postadresse</h3>
+          <p class="mt-2 text-sm text-slate-700">Munda Foundation<br>Bergen, Norge</p>
+
+          <h3 class="mt-6 font-semibold">E-post</h3>
+          <a href="mailto:post@mundafoundation.org"
+             class="mt-2 block text-sm text-cyan-700 hover:underline">
+            post@mundafoundation.org
+          </a>
+        </div>
+      </aside>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <footer class="border-t border-slate-200 bg-white/60">
     <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-600 flex flex-col md:flex-row items-center justify-between gap-3">
