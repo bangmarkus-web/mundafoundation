@@ -15,6 +15,22 @@
       "date": "2025-10-22",
       "tag": "Background",
       "url": "/articles/backstory-munda.html"
-    }
+    },
+    {
+     "lang": "no",
+     "title": "Rokel Ungdomssenter",
+     "excerpt": "Et samarbeidsprosjekt for unge musikere.",
+     "date": "2025-11-12",
+     "tag": "Prosjekt",
+     "url": "/articles/rokel-youth-center.html"
+   },
+   {
+     "lang": "en",
+     "title": "Rokel Youth Center",
+     "excerpt": "A collaborative project for young musicians.",
+     "date": "2025-11-12",
+     "tag": "Project",
+     "url": "/articles/rokel-youth-center.html"
+  }
   ]
 }
