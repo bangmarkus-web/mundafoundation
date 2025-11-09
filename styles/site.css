@@ -1,1 +1,37 @@
 :root{--brand:#0f172a}html{scroll-behavior:smooth}.shadow-soft{box-shadow:0 6px 18px rgba(0,0,0,.08)}.rounded-3xl{border-radius:1.5rem}
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.shadow-soft {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+/* --- Nye linjer under her --- */
+
+/* Jevnere fokus og bedre kontrast */
+input[type="text"],
+input[type="email"],
+textarea {
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.35); /* cyan-500-ish ring */
+  border-color: rgb(14 165 233);
+}
+
+/* Jevnere, mykere skygge på kort */
+.shadow-soft {
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.06),
+    0 8px 24px rgba(15, 23, 42, 0.06);
+}
