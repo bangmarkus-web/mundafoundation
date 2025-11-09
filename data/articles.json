@@ -1,0 +1,25 @@
+{
+  "articles": [
+    {
+      "title": "Musikk som nøkkel til fellesskap",
+      "excerpt": "Hvordan gitar, kor og rytme kan skape trygghet for barn og unge i Sierra Leone.",
+      "tag": "Feltinnsikt",
+      "date": "2025-11-09",
+      "body": "Kort artikkeltekst."
+    },
+    {
+      "title": "Kunstverksted på lavt budsjett",
+      "excerpt": "Praktiske tips for oppstart av lokale verksteder med gjenbruksmateriell.",
+      "tag": "Verktøy",
+      "date": "2025-10-28",
+      "body": "Innhold."
+    },
+    {
+      "title": "Partnerskap som varer",
+      "excerpt": "Hva vi ser etter i samarbeid med skoler, frivillige og lokale institusjoner.",
+      "tag": "Samarbeid",
+      "date": "2025-09-14",
+      "body": "Innhold."
+    }
+  ]
+}
