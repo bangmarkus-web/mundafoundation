@@ -43,28 +43,38 @@
     </div>
   </header>
 
-  <section class="relative">
-    <div class="mx-auto max-w-6xl px-4 pt-16 pb-20 grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">Kunst og musikk som skaper håp</h1>
-        <p class="mt-4 text-lg text-slate-700 leading-relaxed">
-          Munda Foundation støtter barn og unge gjennom kunst, musikk og fellesskap.  
-          Vi bygger lokale aktiviteter i samarbeid med partnere i Sierra Leone og Norge.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#about" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-semibold shadow-sm bg-cyan-600 text-white hover:opacity-95">Les mer</a>
-          <a href="#articles" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-semibold shadow-sm border border-slate-300 bg-white text-slate-800 hover:bg-slate-50">Siste artikler</a>
-        </div>
-      </div>
-      <div class="relative h-72 md:h-96">
-<div class="absolute inset-0 rounded-3xl overflow-hidden shadow-inner">
-  <img src="./images/logo.png" alt="Munda Foundation logo"
-       class="w-full h-full object-cover">
-</div>
-        </div>
+ <section class="relative">
+  <div class="mx-auto max-w-6xl px-4 pt-16 pb-20 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
+        Kunst og musikk som skaper håp
+      </h1>
+      <p class="mt-4 text-lg text-slate-700 leading-relaxed">
+        Munda Foundation støtter barn og unge gjennom kunst, musikk og fellesskap.  
+        Vi bygger lokale aktiviteter i samarbeid med partnere i Sierra Leone og Norge.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="#about" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-semibold shadow-sm bg-cyan-600 text-white hover:opacity-95">Les mer</a>
+        <a href="#articles" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-semibold shadow-sm border border-slate-300 bg-white text-slate-800 hover:bg-slate-50">Siste artikler</a>
       </div>
     </div>
-  </section>
+
+    <!-- Bilde-seksjonen -->
+    <div class="relative h-72 md:h-96">
+      <!-- gradient ring -->
+      <div class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-fuchsia-200 via-amber-100 to-cyan-200 shadow-inner"></div>
+
+      <!-- bilde -->
+      <div class="absolute inset-[6px] md:inset-3 rounded-3xl overflow-hidden">
+        <img
+          src="./images/logo.png"
+          alt="Munda Foundation logo"
+          class="w-full h-full object-contain object-center"
+        >
+      </div>
+    </div>
+  </div>
+</section>
 
   <section id="about" class="scroll-mt-24">
     <div class="mx-auto max-w-6xl px-4 py-16">
