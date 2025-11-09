@@ -49,12 +49,27 @@
 
   </main>
 
-  <script>
-    // Enkel språkvelger som bytter mellom artiklene
-    const params = new URLSearchParams(window.location.search);
-    const lang = params.get('lang') || 'no';
-    document.getElementById(lang).classList.remove('hidden');
-  </script>
+<script>
+(function () {
+  // Fall back to the page's <html lang="..."> if no query param is set
+  const defaultLang = (document.documentElement.lang || 'no').startsWith('en') ? 'en' : 'no';
+  const lang = new URLSearchParams(location.search).get('lang') || defaultLang;
+
+  // Hide both, then show the selected language
+  ['no', 'en'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.classList.add('hidden');
+  });
+  const active = document.getElementById(lang) || document.getElementById(defaultLang);
+  if (active) active.classList.remove('hidden');
+
+  // Optional: highlight current choice in the language switcher, if you add class="lang-toggle" to that div
+  document.querySelectorAll('.lang-toggle a').forEach(a => {
+    a.classList.toggle('font-semibold', a.href.includes('lang=' + lang));
+  });
+})();
+</script>
+
 
 </body>
 </html>
