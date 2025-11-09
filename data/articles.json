@@ -1,25 +1,20 @@
 {
   "articles": [
     {
-      "title": "Musikk som nøkkel til fellesskap",
-      "excerpt": "Hvordan gitar, kor og rytme kan skape trygghet for barn og unge i Sierra Leone.",
-      "tag": "Feltinnsikt",
-      "date": "2025-11-09",
-      "body": "Kort artikkeltekst."
+      "lang": "no",
+      "title": "Backstory: Munda Foundation",
+      "excerpt": "En stiftelse i onkel Mundas navn, bygget på verdier om fellesskap og raushet.",
+      "date": "2025-11-01",
+      "tag": "Bakgrunn",
+      "url": "/articles/backstory-munda.html"
     },
     {
-      "title": "Kunstverksted på lavt budsjett",
-      "excerpt": "Praktiske tips for oppstart av lokale verksteder med gjenbruksmateriell.",
-      "tag": "Verktøy",
-      "date": "2025-10-28",
-      "body": "Innhold."
-    },
-    {
-      "title": "Partnerskap som varer",
-      "excerpt": "Hva vi ser etter i samarbeid med skoler, frivillige og lokale institusjoner.",
-      "tag": "Samarbeid",
-      "date": "2025-09-14",
-      "body": "Innhold."
+      "lang": "en",
+      "title": "Backstory: The Munda Foundation",
+      "excerpt": "A foundation built in Uncle Munda’s name, founded on generosity and community.",
+      "date": "2025-10-22",
+      "tag": "Background",
+      "url": "/articles/backstory-munda.html"
     }
   ]
 }
