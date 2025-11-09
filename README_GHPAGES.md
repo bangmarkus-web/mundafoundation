@@ -1,7 +1,5 @@
 # Munda Foundation — GitHub Pages build
 
-This folder is ready for GitHub Pages.
-
 ## Structure
 - index.html (Norwegian)
 - index-en.html (English)
