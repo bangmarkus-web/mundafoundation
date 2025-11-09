@@ -43,14 +43,15 @@
     </div>
   </header>
 
- <section class="relative">
+<section class="relative">
   <div class="mx-auto max-w-6xl px-4 pt-16 pb-20 grid md:grid-cols-2 gap-10 items-center">
+    <!-- Left: text -->
     <div>
       <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
         Kunst og musikk som skaper håp
       </h1>
       <p class="mt-4 text-lg text-slate-700 leading-relaxed">
-        Munda Foundation støtter barn og unge gjennom kunst, musikk og fellesskap.  
+        Munda Foundation støtter barn og unge gjennom kunst, musikk og fellesskap.
         Vi bygger lokale aktiviteter i samarbeid med partnere i Sierra Leone og Norge.
       </p>
       <div class="mt-6 flex flex-wrap gap-3">
@@ -59,21 +60,19 @@
       </div>
     </div>
 
-<!-- HERO: no-crop image inside thin gradient frame -->
-<div class="relative">
-  <div class="rounded-3xl p-[6px] bg-gradient-to-tr from-fuchsia-200 via-amber-100 to-cyan-200">
-    <figure class="rounded-3xl bg-[#dff2f3] overflow-hidden">
-      <!-- Aspect ratio box prevents cropping and stretching -->
-      <div class="aspect-[5/4] md:aspect-[4/3] w-full">
-        <img
-          src="./images/logo.png"
-          alt="Munda Foundation logo"
-          class="w-full h-full object-contain"
-        />
+    <!-- Right: image with glow, no cropping -->
+    <div class="relative">
+      <div class="rounded-3xl p-[6px] bg-gradient-to-tr from-fuchsia-200 via-amber-100 to-cyan-200">
+        <figure class="rounded-3xl bg-[#dff2f3] overflow-hidden">
+          <!-- keep full logo visible without crop -->
+          <div class="aspect-[4/3] w-full">
+            <img src="./images/logo.png" alt="Munda Foundation logo" class="w-full h-full object-contain" />
+          </div>
+        </figure>
       </div>
-    </figure>
+    </div>
   </div>
-</div>
+</section>
 
   <section id="about" class="scroll-mt-24">
     <div class="mx-auto max-w-6xl px-4 py-16">
