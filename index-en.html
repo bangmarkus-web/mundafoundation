@@ -61,20 +61,16 @@
     </div>
 
     <!-- Right: image with glow, no cropping -->
-    <div class="relative">
-      <!-- Right: image with clean background -->
-<div class="relative h-72 md:h-96">
-  <!-- exact logo background color -->
-  <div class="absolute inset-0 rounded-3xl bg-[#dff4f7] shadow-inner"></div>
-
-  <!-- logo image, slightly zoomed and nudged up -->
-  <img src="./images/logo.png" 
-       alt="Munda Foundation logo"
-       class="absolute inset-[6px] md:inset-3 rounded-3xl overflow-hidden w-full h-full object-cover object-center scale-[1.12] translate-y-[-2px]">
-</div>
-        </figure>
+<div class="relative">
+  <div class="rounded-3xl p-[6px] bg-gradient-to-tr from-fuchsia-200 via-amber-100 to-cyan-200">
+    <figure class="rounded-3xl bg-[#dff4f7] overflow-hidden">
+      <!-- keep full logo visible without crop -->
+      <div class="aspect-[4/3] w-full">
+        <img src="./images/logo.png" alt="Munda Foundation logo" class="w-full h-full object-contain" />
       </div>
-    </div>
+    </figure>
+  </div>
+</div>
   </div>
 </section>
         
