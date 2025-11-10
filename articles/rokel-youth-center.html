@@ -17,9 +17,10 @@
 
     <!-- Språkvelger -->
     <div class="text-sm text-right mb-4">
-      <a href="?lang=no" class="underline font-semibold">Norsk</a> |
-      <a href="?lang=en" class="underline">English</a>
+      <a id="link-no" href="?lang=no" class="underline">Norsk</a> |
+      <a id="link-en" href="?lang=en" class="underline">English</a>
     </div>
+
 
     <!-- Norsk versjon -->
     <article id="no" class="prose prose-slate max-w-none">
@@ -49,12 +50,30 @@
 
   </main>
 
-  <script>
-    // Enkel språkvelger som bytter mellom artiklene
-    const params = new URLSearchParams(window.location.search);
-    const lang = params.get('lang') || 'no';
-    document.getElementById(lang).classList.remove('hidden');
-  </script>
+ <script>
+  // read lang param, default to no
+  const params = new URLSearchParams(window.location.search);
+  const lang = params.get('lang') || 'no';
+
+  // hide both, then show selected
+  const noEl = document.getElementById('no');
+  const enEl = document.getElementById('en');
+  noEl.classList.add('hidden');
+  enEl.classList.add('hidden');
+  (lang === 'en' ? enEl : noEl).classList.remove('hidden');
+
+  // update bold state in the language switcher
+  const linkNo = document.getElementById('link-no');
+  const linkEn = document.getElementById('link-en');
+  if (lang === 'en') {
+    linkEn.classList.add('font-semibold');
+    linkNo.classList.remove('font-semibold');
+  } else {
+    linkNo.classList.add('font-semibold');
+    linkEn.classList.remove('font-semibold');
+  }
+</script>
+
 
 </body>
 </html>
