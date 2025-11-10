@@ -78,34 +78,44 @@
       } catch { return ''; }
     }
 
-    function renderTags(list) {
-      const bar = document.getElementById('tag-bar');
-      bar.innerHTML = '';
-      const tags = Array.from(new Set(list.map(a => a.tag).filter(Boolean))).sort();
-      const labels = {
-        all: isEnglish ? 'All' : 'Alle'
-      };
+function renderTags(list) {
+  const bar = document.getElementById('tag-bar');
+  bar.innerHTML = '';
 
-      function chip(value, label) {
-        const a = document.createElement('button');
-        const active = activeTag === value;
-        a.className =
-          (active
-            ? 'bg-cyan-600 text-white '
-            : 'bg-white text-slate-800 hover:bg-slate-50 ') +
-          'text-xs font-semibold rounded-full px-3 py-1 border border-slate-200 shadow-soft';
-        a.textContent = label;
-        a.onclick = () => {
-          activeTag = value;
-          page = 1;
-          applyFilters();
-        };
-        bar.appendChild(a);
-      }
+  // Only collect tags for the current language
+  const tags = Array.from(
+    new Set(
+      (list || [])
+        .filter(a => a.lang === pageLang)   // ← language filter added
+        .map(a => a.tag)
+        .filter(Boolean)
+    )
+  ).sort();
 
-      chip('all', labels.all);
-      tags.forEach(t => chip(t, t));
-    }
+  const labels = {
+    all: isEnglish ? 'All' : 'Alle'
+  };
+
+  function chip(value, label) {
+    const a = document.createElement('button');
+    const active = activeTag === value;
+    a.className =
+      (active
+        ? 'bg-cyan-600 text-white '
+        : 'bg-white text-slate-800 hover:bg-slate-50 ') +
+      'text-xs font-semibold rounded-full px-3 py-1 border border-slate-200 shadow-soft';
+    a.textContent = label;
+    a.onclick = () => {
+      activeTag = value;
+      page = 1;
+      applyFilters();
+    };
+    bar.appendChild(a);
+  }
+
+  chip('all', labels.all);
+  tags.forEach(t => chip(t, t));
+}
 
     function applyFilters() {
       // Språk
