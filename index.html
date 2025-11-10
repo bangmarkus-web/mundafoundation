@@ -268,7 +268,9 @@
   </footer>
 
 <script>
-  document.getElementById('year').textContent = '© ' + new Date().getFullYear() + ' Munda Foundation';
+  // Oppdatér årstall automatisk i footer
+  document.getElementById('year').textContent =
+    '© ' + new Date().getFullYear() + ' Munda Foundation';
 
   async function loadArticles() {
     try {
@@ -277,20 +279,42 @@
       const grid = document.getElementById('articles-grid');
       grid.innerHTML = '';
 
-      // Finn språk basert på hvilken side du er på
+      // Finn språk basert på side
       const isEnglish = window.location.pathname.includes('index-en');
       const lang = isEnglish ? 'en' : 'no';
 
       // Filtrer artikler etter språk
       const filtered = data.articles.filter(a => a.lang === lang);
 
-      filtered.forEach(function(a) {
+      // Lag kortene
+      filtered.forEach(function (a) {
         var card = document.createElement('a');
-        card.href = a.url;
-        card.className = 'group block rounded-3xl border border-slate-200 bg-white p-6 shadow-soft hover:shadow-lg transition-shadow';
-        var tag = a.tag ? '<div class="text-xs font-semibold tracking-wide text-violet-700">' + a.tag + '</div>' : '';
-        var date = a.date ? new Date(a.date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' }) : '';
-        card.innerHTML = tag + '<h3 class="mt-1 text-lg font-semibold text-slate-900 group-hover:underline">' + a.title + '</h3><p class="mt-2 text-sm text-slate-700">' + (a.excerpt || '') + '</p><div class="mt-4 text-xs text-slate-500">' + date + '</div>';
+       const pageLang = isEnglish ? 'en' : 'no';
+       const href = a.url + (a.url.includes('?') ? '&' : '?') + 'lang=' + pageLang;
+        card.href = href;
+        card.className =
+          'group block rounded-3xl border border-slate-200 bg-white p-6 shadow-soft hover:shadow-lg transition-shadow';
+        var tag = a.tag
+          ? '<div class="text-xs font-semibold tracking-wide text-violet-700">' +
+            a.tag +
+            '</div>'
+          : '';
+        var date = a.date
+          ? new Date(a.date).toLocaleDateString(undefined, {
+              year: 'numeric',
+              month: 'short',
+              day: '2-digit',
+            })
+          : '';
+        card.innerHTML =
+          tag +
+          '<h3 class="mt-1 text-lg font-semibold text-slate-900 group-hover:underline">' +
+          a.title +
+          '</h3><p class="mt-2 text-sm text-slate-700">' +
+          (a.excerpt || '') +
+          '</p><div class="mt-4 text-xs text-slate-500">' +
+          date +
+          '</div>';
         grid.appendChild(card);
       });
     } catch (e) {
