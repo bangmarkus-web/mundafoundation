@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Articles – Munda Foundation</title>
+  <link href="https://unpkg.com/@fontsource/inter@5.0.16/variable.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/styles/site.css">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <meta name="description" content="All articles from Munda.">
+</head>
+<body class="bg-gradient-to-b from-sky-50 via-white to-violet-50 text-slate-800 [font-family:'InterVariable',system-ui,-apple-system,Segoe_UI,Roboto,Inter,Arial,sans-serif]">
+
+  <main class="mx-auto max-w-6xl px-4 py-12">
+
+    <!-- Topp -->
+    <div class="flex items-center justify-between gap-4 mb-6">
+      <h1 class="text-3xl font-extrabold">Articles</h1>
+      <div class="text-sm">
+        <a href="/index.html" class="text-cyan-700 hover:underline">Back to homepage.</a>
+      </div>
+    </div>
+
+    <!-- Verktøylinje -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+      <div class="flex flex-wrap items-center gap-2" id="tag-bar">
+        <!-- Tag chips renderes her -->
+      </div>
+      <label class="relative block w-full md:w-64">
+        <input id="search" type="search" placeholder="Search for an article..."
+               class="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500">
+      </label>
+    </div>
+
+    <!-- Grid -->
+    <div id="articles-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+    <!-- Last mer -->
+    <div class="mt-8 text-center">
+      <button id="loadMore"
+              class="inline-flex items-center gap-2 rounded-2xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:opacity-95">
+        Load more
+      </button>
+      <p id="endNote" class="mt-3 text-sm text-slate-500 hidden">No more articles.</p>
+    </div>
+
+  </main>
+
+  <script>
+    // Språkdeteksjon for denne siden (NO som default her)
+    const isEnglish = window.location.pathname.includes('index-en');
+    const pageLang = isEnglish ? 'en' : 'no';
+
+    // Paginering
+    let page = 1;
+    const pageSize = 12;
+
+    // Tilstand
+    let all = [];
+    let filtered = [];
+    let activeTag = 'all';
+    let query = '';
+
+    function preserveLang(url) {
+      const hasQuery = url.includes('?');
+      const glue = hasQuery ? '&' : '?';
+      return url + glue + 'lang=' + pageLang;
+    }
+
+    function byDateDesc(a, b) {
+      return new Date(b.date) - new Date(a.date);
+    }
+
+    function formatDate(iso) {
+      try {
+        return new Date(iso).toLocaleDateString(undefined, {year:'numeric', month:'short', day:'2-digit'});
+      } catch { return ''; }
+    }
+
+    function renderTags(list) {
+      const bar = document.getElementById('tag-bar');
+      bar.innerHTML = '';
+      const tags = Array.from(new Set(list.map(a => a.tag).filter(Boolean))).sort();
+      const labels = {
+        all: isEnglish ? 'All' : 'Alle'
+      };
+
+      function chip(value, label) {
+        const a = document.createElement('button');
+        const active = activeTag === value;
+        a.className =
+          (active
+            ? 'bg-cyan-600 text-white '
+            : 'bg-white text-slate-800 hover:bg-slate-50 ') +
+          'text-xs font-semibold rounded-full px-3 py-1 border border-slate-200 shadow-soft';
+        a.textContent = label;
+        a.onclick = () => {
+          activeTag = value;
+          page = 1;
+          applyFilters();
+        };
+        bar.appendChild(a);
+      }
+
+      chip('all', labels.all);
+      tags.forEach(t => chip(t, t));
+    }
+
+    function applyFilters() {
+      // Språk
+      let list = all.filter(a => a.lang === pageLang);
+
+      // Tag
+      if (activeTag !== 'all') {
+        list = list.filter(a => a.tag === activeTag);
+      }
+      // Søk
+      if (query.trim()) {
+        const q = query.toLowerCase();
+        list = list.filter(a =>
+          (a.title || '').toLowerCase().includes(q) ||
+          (a.excerpt || '').toLowerCase().includes(q)
+        );
+      }
+      list.sort(byDateDesc);
+      filtered = list;
+      renderPage();
+    }
+
+    function renderPage() {
+      const grid = document.getElementById('articles-grid');
+      grid.innerHTML = '';
+
+      const start = 0;
+      const end = page * pageSize;
+      const slice = filtered.slice(start, end);
+
+      slice.forEach(a => {
+        const card = document.createElement('a');
+        card.href = preserveLang(a.url);
+        card.className =
+          'group block rounded-3xl border border-slate-200 bg-white p-6 shadow-soft hover:shadow-lg transition-shadow';
+
+        const tag = a.tag
+          ? `<div class="text-xs font-semibold tracking-wide text-violet-700">${a.tag}</div>`
+          : '';
+
+        const icon = a.icon
+          ? `<img src="${a.icon}" alt="" class="h-5 w-5 opacity-80">`
+          : '';
+
+        const img = a.image
+          ? `<img src="${a.image}" alt="" class="w-full h-40 object-cover rounded-2xl mb-3">`
+          : '';
+
+        const date = formatDate(a.date);
+
+        card.innerHTML =
+          img +
+          tag +
+          `<h3 class="mt-1 text-lg font-semibold text-slate-900 group-hover:underline">${a.title}</h3>` +
+          (a.excerpt ? `<p class="mt-2 text-sm text-slate-700">${a.excerpt}</p>` : '') +
+          `<div class="mt-4 flex items-center justify-between">
+             <div class="text-xs text-slate-500">${date}</div>
+             ${icon ? `<div class="shrink-0">${icon}</div>` : ''}
+           </div>`;
+
+        grid.appendChild(card);
+      });
+
+      const loadBtn = document.getElementById('loadMore');
+      const endNote = document.getElementById('endNote');
+      const hasMore = filtered.length > page * pageSize;
+      loadBtn.classList.toggle('hidden', !hasMore);
+      endNote.classList.toggle('hidden', hasMore || filtered.length === 0);
+    }
+
+    async function init() {
+      const res = await fetch('/data/articles.json', { cache: 'no-store' });
+      const data = await res.json();
+      all = (data.articles || []).slice();
+      renderTags(all);
+      applyFilters();
+
+      document.getElementById('search').addEventListener('input', e => {
+        query = e.target.value || '';
+        page = 1;
+        applyFilters();
+      });
+
+      document.getElementById('loadMore').addEventListener('click', () => {
+        page += 1;
+        renderPage();
+      });
+    }
+
+    init();
+  </script>
+
+</body>
+</html>
